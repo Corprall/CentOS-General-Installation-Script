@@ -36,19 +36,61 @@ echo 0 = Exit
 
 read task
 case $task in
-0)  running="false"
-1)  core.sh pre
-2)  core.sh apache
-3)  core.sh php
-4)  core.sh mysql
-5)  core.sh phpmyadmin
-6)  core.sh java7
-7)  core.sh java8
-8)  core.sh teamspeak
-9)  core.sh multicraft
-10) core.sh mcmyadmin
-11)  core.sh vnic
-12) core.sh dns
-13) core.sh cfgroot
+0)
+running="false"
+
+1)
+if $pre = No
+then
+pre="Yes"
+core.sh pre
+else echo Already Installed
+;;
+
+2)
+if $apache = No
+then
+apache="Yes"
+core.sh apache
+else echo Already Installed
+;;
+
+3)
+if $php = No
+then
+php="Yes"
+core.sh php
+else echo Already Installed
+
+4)
+core.sh mysql
+
+5)
+core.sh phpmyadmin
+
+6)
+core.sh java7
+
+7)
+core.sh java8
+
+8)
+core.sh teamspeak
+
+9)
+core.sh multicraft
+
+10)
+core.sh mcmyadmin
+
+11)
+core.sh vnic
+
+12)
+core.sh dns
+
+13)
+core.sh cfgroot
+
 *) echo Please choose a valid option.
 esac
