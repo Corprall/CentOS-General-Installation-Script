@@ -1,27 +1,42 @@
 #!/bin/sh
-running = true
+
+running="true"
+
+pre="no"
+apache="no"
+php="no"
+mysql="no"
+phpma="no"
+java="none"
+ts="no"
+multicraft="no"
+mcmyadmin="no"
+vnic="no"
+dns="no"
+cfgroot="no"
+
 while : $running=true
 do
 
 echo What would you like to do?
-echo 1 = Pre-Tasks
-echo 2 = Install Apache
-echo 3 = Install PHP
-echo 4 = Install MySQL (MariaDB) (Attended)
-echo 5 = Install phpMyAdmin
-echo 6 = Install Java7
-echo 7 = Install Java8
-echo 8 = Install Teamspeak
-echo 9 = Install Multicraft
-echo 10 = Install McMyAdmin
-echo 11 = Install Virtual NIC (Attended)
-echo 12 = Install DNS (Attended)
-echo 13 = Configure Root (Attended)
+echo 1 = Pre-Tasks Complete-$pre
+echo 2 = Install Apache Installed-$apache
+echo 3 = Install PHP Installed-$php
+echo 4 = Install MySQL (MariaDB) (Attended) Installed-$mysql
+echo 5 = Install phpMyAdmin Installed-$phpma
+echo 6 = Install Java7 Current-$java
+echo 7 = Install Java8 Current-$java
+echo 8 = Install Teamspeak Installed-$ts
+echo 9 = Install Multicraft Installed-$multicraft
+echo 10 = Install McMyAdmin Installed-$mcmyadmin
+echo 11 = Install Virtual NIC (Attended) Installed-$vnic
+echo 12 = Install DNS (Attended) Installed-$dns
+echo 13 = Configure Root (Attended) Installed-$cfgroot
 echo 0 = Exit
 
 read task
 case $task in
-0)  running = false
+0)  running="false"
 1)  core.sh pre
 2)  core.sh apache
 3)  core.sh php
