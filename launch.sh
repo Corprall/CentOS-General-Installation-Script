@@ -2,18 +2,18 @@
 
 running="true"
 
-pre="no"
-apache="no"
-php="no"
-mysql="no"
-phpma="no"
-java="none"
-ts="no"
-multicraft="no"
-mcmyadmin="no"
-vnic="no"
-dns="no"
-cfgroot="no"
+pre="No"
+apache="No"
+php="No"
+mysql="No"
+phpma="No"
+java="None"
+ts="No"
+multicraft="No"
+mcmyadmin="No"
+vnic="No"
+dns="No"
+cfgroot="No"
 
 while : $running=true
 do
