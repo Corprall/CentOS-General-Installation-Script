@@ -31,7 +31,7 @@ echo 9 = Install Multicraft Installed-$multicraft
 echo 10 = Install McMyAdmin Installed-$mcmyadmin
 echo 11 = Install Virtual NIC (Attended) Installed-$vnic
 echo 12 = Install DNS (Attended) Installed-$dns
-echo 13 = Configure Root (Attended) Installed-$cfgroot
+echo 13 = Configure Root (Attended) Configured-$cfgroot
 echo 0 = Exit
 
 read task
@@ -63,34 +63,83 @@ core.sh php
 else echo Already Installed
 
 4)
+if $mysql = No
+then
+mysql=Yes
 core.sh mysql
+else echo Already Installed
+;;
 
 5)
+if $phpma = No
+then
+phpma=Yes
 core.sh phpmyadmin
+else echo Already Installed
+;;
 
 6)
+if $java = None
+then
+java=Java7
 core.sh java7
+else echo Java Is Already Installed
+;;
 
 7)
+if $java = None
+then
+java=Java8
 core.sh java8
+else echo Java Is Already Installed
+;;
 
 8)
+if $ts = No
+then
+ts=Yes
 core.sh teamspeak
+else echo Already Installed
+;;
 
 9)
+if $multicraft = No
+then
+multicraft=Yes
 core.sh multicraft
+;;
 
 10)
+if $mcmyadmin = No
+then
+mcmyadmin=Yes
 core.sh mcmyadmin
+else echo Already Installed
+;;
 
 11)
+if $vnic = No
+then
+vnic=Yes
 core.sh vnic
+else echo Already Installed
+;;
 
 12)
+if dns = No
+then
+dns=Yes
 core.sh dns
+else echo Already Installed
+;;
 
 13)
+if cfgroot = No
+then
+cfgroot=Yes
 core.sh cfgroot
+else echo Already Installed
+;;
 
 *) echo Please choose a valid option.
 esac
